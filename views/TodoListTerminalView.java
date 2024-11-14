@@ -93,17 +93,17 @@ public class TodoListTerminalView implements TodoListView {
 
     public String input(String info) {
         System.out.print(info + " : ");
-        var data = scanner.nextLine();
+        String data = scanner.nextLine();
         return data;
     }
 
     public void showTodoList() {
         System.out.println("TODO LIST");
         toDoList[] todos =  todoListService.getTodoList();
-        for (var i = 0; i < todos.length; i++) {
-            var todo = todos[i];
+        for (int i = 0; i < todos.length; i++) {
+            toDoList todo = todos[i];
             if (todo != null) {
-                System.out.println((i + 1) + ". " + todo);
+                System.out.println((i + 1) + ". " + todo.getTodo());
             }
         }
     }
